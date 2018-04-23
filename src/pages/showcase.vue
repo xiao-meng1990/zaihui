@@ -4,8 +4,6 @@
       <button class="btn btn-info xuanfu">联系我们</button>
     </router-link>
     <div class="headerTop" style="position:relative;">
-      <div class="bg14"></div>
-      <div class="bg15"></div>
       <div>
         <router-link to="/">
           <div class="logo"></div>
@@ -22,45 +20,45 @@
     
     <zh-detail class="box">
       <div>
-        <div v-on:mouseover="getInfo(1)" class="list">
+        <div v-on:mouseover="getInfo(1)" v-on:mouseout="hideInfo" class="list">
           <div class="case1"></div>
-          <div style="margin-top:15px;">山崎面包</div> 
+          <div :class="{fontcolor:isShow[0]}" style="margin-top:15px;">山崎面包</div> 
         </div>
-        <div v-on:mouseover="getInfo(2)" class="list">
+        <div v-on:mouseover="getInfo(2)" v-on:mouseout="hideInfo" class="list">
           <div class="case2"></div>
-          <div style="margin-top:15px;">宽窄巷子</div>
+          <div :class="{fontcolor:isShow[1]}" style="margin-top:15px;">宽窄巷子</div>
         </div>
-        <div v-on:mouseover="getInfo(3)" class="list">
+        <div v-on:mouseover="getInfo(3)" v-on:mouseout="hideInfo" class="list">
           <div class="case3"></div> 
-          <div>天辣绿色<br>时尚餐厅</div>
+          <div :class="{fontcolor:isShow[2]}">天辣绿色<br>时尚餐厅</div>
         </div>
-        <div v-on:mouseover="getInfo(4)" class="list">
+        <div v-on:mouseover="getInfo(4)" v-on:mouseout="hideInfo" class="list">
           <div class="case4"></div> 
-          <div style="margin-top:15px;">掌柜的店</div>
+          <div :class="{fontcolor:isShow[3]}" style="margin-top:15px;">掌柜的店</div>
         </div>
-        <div v-on:mouseover="getInfo(5)" class="list">
+        <div v-on:mouseover="getInfo(5)" v-on:mouseout="hideInfo" class="list">
           <div class="case5"></div> 
-          <div>阿吾罗<br>日本料理</div>
+          <div :class="{fontcolor:isShow[4]}">阿吾罗<br>日本料理</div>
         </div>
-        <div v-on:mouseover="getInfo(6)" class="list">
+        <div v-on:mouseover="getInfo(6)" v-on:mouseout="hideInfo" class="list">
           <div class="case6"></div> 
-          <div>盆鱼宴<br>秘制酸菜鱼</div>
+          <div :class="{fontcolor:isShow[5]}">盆鱼宴<br>秘制酸菜鱼</div>
         </div>
-        <div v-on:mouseover="getInfo(7)" class="list">
+        <div v-on:mouseover="getInfo(7)" v-on:mouseout="hideInfo" class="list">
           <div class="case7"></div> 
-          <div style="margin-top:15px;">胖小萌肉蟹煲</div>
+          <div :class="{fontcolor:isShow[6]}" style="margin-top:15px;">胖小萌肉蟹煲</div>
         </div>
-        <div v-on:mouseover="getInfo(8)" class="list">
+        <div v-on:mouseover="getInfo(8)" v-on:mouseout="hideInfo" class="list">
           <div class="case8"></div> 
-          <div>第三杯<br>创意餐·吧</div>
+          <div :class="{fontcolor:isShow[7]}">第三杯<br>创意餐·吧</div>
         </div>
-        <div v-on:mouseover="getInfo(9)" class="list">
+        <div v-on:mouseover="getInfo(9)" v-on:mouseout="hideInfo" class="list">
           <div class="case9"></div> 
-          <div style="margin-top:15px;">一品粤珍轩</div>
+          <div :class="{fontcolor:isShow[8]}" style="margin-top:15px;">一品粤珍轩</div>
         </div>
-        <div v-on:mouseover="getInfo(10)" class="list">
+        <div v-on:mouseover="getInfo(10)" v-on:mouseout="hideInfo" class="list">
           <div class="case10"></div> 
-          <div style="margin-top:15px;">遇上西雅图</div>
+          <div :class="{fontcolor:isShow[9]}" style="margin-top:15px;">遇上西雅图</div>
         </div>
       </div>
       <div class="content">{{info}}</div>
@@ -85,33 +83,48 @@ export default {
   },
   data(){
     return {
-      info:""
+      info:"",
+      isShow:[false,false,false,false,false,false,false,false,false,false]
     }
   },
   methods:{
     getInfo: function(ind){
       if(ind==1){
+        this.isShow[0]=true;
         this.info = "17家知名面包连锁店，合作半年多，商户累计6万多名会员，回头率超过150%，带回超过100万营业额，商户送出近25万积分。面包行业竞争激烈，客单价低，需要高频消费，商户使用智能营销自动发券超过20万，召回老会员，使用率近10%，同时提升了客单价，商户对效果非常认可。"
       }else if(ind==2){
+        this.isShow[1]=true;
         this.info = "全国连锁火锅店，合作超过半年，商户已累计超过6万名会员，带回营业额超过80万。客户成功团队为商户策划会员日活动，每月18日新开业门店的会员可享菜品68折，单日销券数量近300张。商户评价再惠的售后是同行业里比较少见的，专业且迅速，总能带来有价值的营销建议。"
       }else if(ind==3){
-        this.info = "上海知名川菜连锁店，合作1年来，商户累计7万多名会员，回头率达到26%，为商户带回170多万营业额。商户使用了储值功能，不仅增加了会员的忠诚度，更为商户增加了300多万的流动资金，提升了运营效率。商户非常信赖智能营销，优惠券使用率达到3%，在无需人工操作的情况下带回老会员让商户非常省心，放精力放在提升菜品和服务上。"
+        this.isShow[2]=true;
+        this.info = "上海知名川菜连锁店，合作1年来，商户累计7万多名会员，回头率达到26%，为商户带回170多万营业额。商户使用了储值功能，不仅增加了会员的忠诚度，更为商户增加了300多万的流动资金，提升了运营效率。商户非常信赖智能营销，在无需人工操作的情况下带回老会员让商户非常省心，放精力放在提升菜品和服务上。"
       }else if(ind==4){
+        this.isShow[3]=true;
         this.info = "上海老牌中原菜连锁餐厅，合作1年半，商户累计近20万名会员，带回营业额超过300万，商户送出近30万积分。客户成功团队为商户策划周年庆活动，活动期间销券数1200多张，带回30多万营业额。作为十几年的老店，商户很重视老会员，通过再惠的系统，为商户积累了大量会员，提升了会员的活跃度和忠诚度，让商户和会员关系更加紧密。"
       }else if(ind==5){
-        this.info = "上海知名中高端日本料理连锁店，合作半年多时间，累计4万多名会员，带回营业额超过1600万。作为高客单低频消费的日料店，客户成功团队帮助商户制定积分好礼活动，共送出近200万积分，兑换率达36%，策划了带动工作日消费的优惠活动，带回100多名客户。配合朋友圈广告推广，帮助商户提升了品牌知名度。商户评价再惠的服务是会员领域专业度和亲和度最高的，对于数据的分析，问题的发掘，营销的建议都带给商家很大的收获。"
+        this.isShow[4]=true;
+        this.info = "上海知名中高端日本料理连锁店，合作半年多时间，累计4万多名会员，带回营业额超过1600万。作为高客单低频消费的日料店，客户成功团队帮助商户制定积分好礼活动，共送出近200万积分，兑换率达36%，策划了带动工作日消费的优惠活动，带回数百名客户。配合朋友圈广告推广，帮助商户提升了品牌知名度。商户评价再惠的服务是会员领域专业度和亲和度最高的，对于数据的分析，问题的发掘，营销的建议都带给商家很大的收获。"
       }else if(ind==6){
-        this.info = "上海小有名气的酸菜鱼火锅店，合作超过1年半，商户累计超过1万名会员，商户对会员等级进行细分，设置丰富的权益和奖励，累计送出25万多积分，兑换率达到4%。此外，商户为会员量身定制优惠活动，客户回头率高达40%，带回100多万营业额。商户评价产品功能比较全面且好用，数据精细，使用会员管理后带来了巨大收益，客户成功团队非常认真负责，为商户经营出谋划策，定期沟通数据，帮助商户大大提升了运营效率。"
+        this.isShow[5]=true;
+        this.info = "上海小有名气的酸菜鱼火锅店，合作超过1年半，商户累计超过1万名会员，商户对会员等级进行细分，设置丰富的权益和奖励，累计送出25万多积分。此外，商户为会员量身定制优惠活动，客户回头率高达40%，带回100多万营业额。商户评价产品功能比较全面且好用，数据精细，使用会员管理后带来了巨大收益，客户成功团队非常认真负责，为商户经营出谋划策，定期沟通数据，帮助商户大大提升了运营效率。"
       }else if(ind==7){
-        this.info = "与再惠合作1年多，累计近1万名会员，商户专注于餐饮服务，少有精力主动做活动，但通过智能营销功能，无人操作系统24小时精准自动发券，累计超过9万张，使用率近4%，带回营业额70多万。再惠客户成功团队每月会给商户做一些数据分析，相当于外聘的营销策划人员，给商户带来了极大的价值。"
+        this.isShow[6]=true;
+        this.info = "与再惠合作1年多，累计近1万名会员，商户专注于餐饮服务，少有精力主动做活动，但通过智能营销功能，无人操作系统24小时精准自动发券，累计超过9万张，带回营业额70多万。再惠客户成功团队每月会给商户做一些数据分析，相当于外聘的营销策划人员，给商户带来了极大的价值。"
       }else if(ind==8){
+        this.isShow[7]=true;
         this.info = "与再惠合作10个月，累计近5000名会员，商户通过智能营销以及主动营销，让会员复购率高达80%，带回营业额超过100万，在西餐届取得了傲人的成绩。期间还为商户针对流失会员多次策划了节日活动，帮助商户大大提升了客单价和营业额。"
       }else if(ind==9){
+        this.isShow[8]=true;
         this.info = "开业10多年的老牌连锁粤菜馆，合作半年多，商户累计超过1.5万名会员，带回近100万营业额。商户送出积分超过250万，兑换率超过16%。地处非核心商业区，依靠口碑留住客户，商户评价再惠的会员管理和自动化营销系统帮助他们积累会员，提供更精准的活动和优质的服务，配合朋友圈广告推广，较好地提升了品牌影响力、会员的满意度和活跃度。"
       }else if(ind==10){
+        this.isShow[9]=true;
         this.info = "业内知名的海鲜自助餐厅，合作超过1年，商户已累计3万多会员，且会员回头率高达55%，客户成功团队针对商户的运营状况和会员情况，策划了三人同行送半价券或四人同行一人免单类的活动，通过代金券大大提高了会员的复购率，累计给商户带回80多万的营业额，也让商户进一步提升了知名度和美誉度。"
       }
 
+    },
+    hideInfo(){
+      this.info = "";
+      this.isShow=[false,false,false,false,false,false,false,false,false,false];
     }
   }
 }
@@ -138,13 +151,13 @@ export default {
 }
 .list{
   display: inline-block;
-  margin: 10px 29px;
+  margin: 10px 22px;
   height: 100px;
   vertical-align: top;
   cursor: pointer;
 }
 .box .list>div:first-child{
-  width: 80px;
+  width: 90px;
   height: 60px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -211,7 +224,10 @@ export default {
 }
 .headerTop{
   height: 400px;
-  background: #364FB9;
+  background-image: url('../assets/images/bg/bg21.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
 }
 .headText{
   width: 630px;
@@ -229,26 +245,7 @@ export default {
   font-weight: 100;
   margin-bottom: 0
 }
-.bg14{
-  position: absolute;
-  width: 274px;
-  height: 363px;
-  background-image: url("../assets/images/bg/bg14.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  z-index: 0;
-  left: 0;
-  bottom: 0;
-}
-.bg15{
-  position: absolute;
-  width: 205px;
-  height: 243px;
-  background-image: url("../assets/images/bg/bg15.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  z-index: 1;
-  right: 0;
-  top: 0;
+.fontcolor{
+  color: #58AFFF!important;
 }
 </style>

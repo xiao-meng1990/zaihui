@@ -11,7 +11,7 @@
       msgBottom2="采用智能营销和主动营销配合的方式，极大提升会员的到店率和忠诚度。"
       msgBottom3="你可以比会员更了解他们自己。"
     ></zh-header-product>
-    <zh-detail style="margin-top:90px;">
+    <zh-detail style="margin-top:90px;margin-bottom: 90px;">
       <div class="bg6"></div>
       <div class="bg7"></div>
       <zh-jumbotron class="margin-t-75 model1" zhTitle="独步业内的智能营销" >
@@ -31,7 +31,7 @@
           </div>
         </div>
       </zh-jumbotron>
-      <zh-jumbotron class="margin-t-75 model2" zhTitle="独步业内的智能营销" >
+      <zh-jumbotron class="margin-t-75 model2" zhTitle="五维忠诚度营销" >
         <h4>科学管理，打动内心，触发行动</h4>
         <div class="liuchengtu"></div>
       </zh-jumbotron>
@@ -121,10 +121,10 @@ export default {
 }
 .imageText{
   display: inline-block;
-  width: 200px;
+  width: 220px;
   height: 150px;
   vertical-align: top;
-  margin: 44px 40px;
+  margin: 44px 30px;
 }
 .imageText p{
   font-weight: 400;
@@ -162,7 +162,6 @@ export default {
   text-align: left;
   margin: 0 auto;
   padding-bottom: 35px;
-  border-bottom: 1px solid #F0F0F0;
 }
 .imagetext .imagetext-left{
   display: inline-block;

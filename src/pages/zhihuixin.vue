@@ -6,12 +6,12 @@
     <zh-header-product
       class="headerTop2"
       msgTop="智汇新"
-      msgCenter="精准会员管理：人工与AI技术相辅而行，事半功倍"
-      msgBottom1="为会员制定精细化的营销方案，赋予个性化的权益和奖励机制，"
-      msgBottom2="采用智能营销和主动营销配合的方式，极大提升会员的到店率和忠诚度。"
-      msgBottom3="你可以比会员更了解他们自己。"
+      msgCenter="一键式拉新：让会员的好友，成为你的会员"
+      msgBottom1="借助超级会员的力量，通过趣味的游戏、"
+      msgBottom2="精美的礼品卡、走心的营销软文等方法，帮助 户传播口碑，"
+      msgBottom3="带来更多的新会员，满足商户的新客流量需求。"
     ></zh-header-product>
-    <zh-detail style="margin-bottom: 60px;">
+    <zh-detail style="margin-bottom: 80px;">
       <div class="bg4"></div>
       <div class="bg5"></div>
       <div style="margin-top:92px;" class="imagetext">

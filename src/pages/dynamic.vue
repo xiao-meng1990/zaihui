@@ -4,6 +4,7 @@
       <button class="btn btn-info xuanfu">联系我们</button>
     </router-link>
     <div class="bg16"></div>
+    <div class="bg19"></div>
     <zh-header-product
       class="headerTop5"
       msgTop="动态"
@@ -28,7 +29,7 @@
             <div class="left-logo news2"></div>
             <a target="_blank" href="http://www.ceweekly.cn/2018/0202/218204.shtml" >
             <div class="right-text">
-              <p>惠获2017<br>中国信息化和软件服务业年度影响力企业奖</p>
+              <p>再惠获2017<br>中国信息化和软件服务业年度影响力企业奖</p>
               <div>2017-06-23 07:15</div>
             </div>
              </a>
@@ -84,7 +85,7 @@
           </div>
           <div class="media-list">
             <div class="left-logo media5"></div>
-            <a target="_blank" href="https://share.vrs.sohu.com/my/v.swf&topBar=1&id=95349682&autoplay=false&xuid=s4974ace49c2b373&from=page" >
+            <a target="_blank" href="https://my.tv.sohu.com/us/327201121/95349682.shtml" >
             <div class="m-right-text">
               <p>蛤？</p>
               <div>螺蛳粉的臭味竟不是来自螺蛳？</div>
@@ -279,5 +280,16 @@ export default {
   z-index: -1;
   left: 0;
   bottom: 62px;
+}
+.bg19{
+  position: absolute;
+  width: 540px;
+  height: 397px;
+  background-image: url("../assets/images/bg/bg19.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  left: 0;
+  top: 2px;
 }
 </style>

@@ -137,14 +137,14 @@
       </zh-jumbotron>
       <zh-jumbotron class="margin-t-100 model2" zhTitle="他们都信任再惠" >
         <div id="brand" class="brand-logo">
-         <div :class="logo.logo1"></div>
-         <div :class="logo.logo2"></div>
-         <div :class="logo.logo3"></div>
-         <div :class="logo.logo4"></div>
-         <div :class="logo.logo5"></div>
-         <div :class="logo.logo6"></div>
-         <div :class="logo.logo7"></div>
-         <div :class="logo.logo8"></div>
+          <div :class="logo.logo1" class="logo-style"></div>
+          <div :class="logo.logo2" class="logo-style"></div>
+          <div :class="logo.logo3" class="logo-style"></div>
+          <div :class="logo.logo4" class="logo-style"></div>
+          <div :class="logo.logo5" class="logo-style"></div>
+          <div :class="logo.logo6" class="logo-style"></div>
+          <div :class="logo.logo7" class="logo-style"></div>
+          <div :class="logo.logo8" class="logo-style"></div>
         </div>
       </zh-jumbotron>
     </zh-detail>
@@ -259,7 +259,7 @@ export default {
         this.logo.logo6="logo"+(5*3 +i);
         i = parseInt(Math.random()*3+1);
         this.logo.logo7="logo"+(6*3 +i);
-        i = parseInt(Math.random()*3+1);
+        i = parseInt(Math.random()*4+1);
         this.logo.logo8="logo"+(7*3 +i);
         return this.logo;
       }, 3000)
@@ -269,6 +269,40 @@ export default {
 }
 </script>
 <style scoped>
+@media screen and (max-width: 1999px) {
+  .swiper {
+    position: relative;
+    width: 400px;
+    height: 222px;
+  }
+  .tubiao{
+    margin-left: 77px;
+    margin-top: 60px;
+  }
+  .swiper-image{
+    width: 369px;
+    height: 271px;
+    position: absolute;
+  }
+
+}
+@media screen and (min-width: 1200px) {
+  .swiper {
+    position: relative;
+    width: 4rem;
+    height: 2.22rem;
+  }
+  .tubiao{
+    margin-left: 0.77rem;
+    margin-top: 0.6rem;
+  }
+  .swiper-image{
+    width: 3.69rem;
+    height: 2.71rem;
+    position: absolute;
+  }
+
+}
 #home{
   position: relative;
 }
@@ -306,7 +340,6 @@ export default {
   text-align: left;
   margin: 0 auto;
   padding-bottom: 35px;
-  border-bottom: 1px solid #F0F0F0;
 }
 .imagetext .imagetext-left{
   display: inline-block;
@@ -376,7 +409,7 @@ export default {
 .brand-logo{
   width: 800px;
   height: 212px;
-  margin: 72px auto;
+  margin: 72px auto 100px;
   font-size: 0;
 }
 .brand-logo>div{
@@ -385,152 +418,89 @@ export default {
   height: 80px;
   margin: 12px 36px;
 }
-.brand-logo>.logo1{
-  background-image: url("../assets/images/brand1.png");
-  background-size: 115px 53px;
+.logo-style{
+  background-size: 75px 75px;
   background-repeat: no-repeat;
   background-position: center center;
+  transition: background-image 1500ms;
+  -moz-transition: background-image 1500ms;	
+  -webkit-transition: background-image 1500ms;	
+  -o-transition: background-image 1500ms;
+}
+.brand-logo>.logo1{
+  background-image: url("../assets/images/brand1.jpg");
 }
 .brand-logo>.logo2{
-  background-image: url("../assets/images/brand2.png");
-  background-size: 63px 71px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand2.jpg");
 }
 .brand-logo>.logo3{
-  background-image: url("../assets/images/brand3.png");
-  background-size: 88px 56px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand3.jpg");
 }
 .brand-logo>.logo4{
-  background-image: url("../assets/images/brand4.png");
-  background-size: 115px 32px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand4.jpg");
 }
 .brand-logo>.logo5{
-  background-image: url("../assets/images/brand5.png");
-  background-size: 48px 80px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand5.jpg");
 }
 .brand-logo>.logo6{
-  background-image: url("../assets/images/brand6.png");
-  background-size: 69px 71px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand6.jpg");
 }
 .brand-logo>.logo7{
-  background-image: url("../assets/images/brand7.png");
-  background-size: 107px 42px;
-  background-repeat: no-repeat;
-  background-position: center center;
-
+  background-image: url("../assets/images/brand7.jpg");
 }
 .brand-logo>.logo8{
-  background-image: url("../assets/images/brand8.png");
-  background-size: 138px 38px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand8.jpg");
 }
 .brand-logo>.logo9{
-  background-image: url("../assets/images/brand9.png");
-  background-size: 67px 67px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand9.jpg");
 }
 .brand-logo>.logo10{
-  background-image: url("../assets/images/brand10.png");
-  background-size: 116px 40px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand10.jpg");
 }
 .brand-logo>.logo11{
-  background-image: url("../assets/images/brand11.png");
-  background-size: 71px 72px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand11.jpg");
 }
 .brand-logo>.logo12{
-  background-image: url("../assets/images/brand12.png");
-  background-size: 70px 88px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand12.jpg");
 }
 .brand-logo>.logo13{
-  background-image: url("../assets/images/brand13.png");
-  background-size: 65px 74px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand13.jpg");
 }
 .brand-logo>.logo14{
-  background-image: url("../assets/images/brand14.png");
-  background-size: 116px 44px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand14.jpg");
 }
 .brand-logo>.logo15{
-  background-image: url("../assets/images/brand15.png");
-  background-size: 77px 69px;
-  background-repeat: no-repeat;
-  background-position: center center;
-
+  background-image: url("../assets/images/brand15.jpg");
 }
 .brand-logo>.logo16{
-  background-image: url("../assets/images/brand16.png");
-  background-size: 106px 56px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand16.jpg");
 }
 .brand-logo>.logo17{
-  background-image: url("../assets/images/brand17.png");
-  background-size: 111px 58px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand17.jpg");
 }
 .brand-logo>.logo18{
-  background-image: url("../assets/images/brand18.png");
-  background-size: 110px 61px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand18.jpg");
 }
 .brand-logo>.logo19{
-  background-image: url("../assets/images/brand19.png");
-  background-size: 88px 75px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand19.jpg");
 }
 .brand-logo>.logo20{
-  background-image: url("../assets/images/brand20.png");
-  background-size: 75px 71px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand20.jpg");
 }
 .brand-logo>.logo21{
-  background-image: url("../assets/images/brand21.png");
-  background-size: 89px 84px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand21.jpg");
 }
 .brand-logo>.logo22{
-  background-image: url("../assets/images/brand22.png");
-  background-size: 123px 50px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand22.jpg");
 }
 .brand-logo>.logo23{
-  background-image: url("../assets/images/brand23.png");
-  background-size: 70px 86px;
-  background-repeat: no-repeat;
-  background-position: center center;
-
+  background-image: url("../assets/images/brand23.jpg");
 }
 .brand-logo>.logo24{
-  background-image: url("../assets/images/brand24.png");
-  background-size: 105px 52px;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("../assets/images/brand24.jpg");
+}
+.brand-logo>.logo25{
+  background-image: url("../assets/images/brand25.jpg");
 }
 .bg1{
   position: absolute;
@@ -565,11 +535,7 @@ export default {
   left: 0;
   bottom: 62px;
 }
-.swiper {
-  position: relative;
-  width: 400px;
-  height: 222px;
-}
+
 .four_left_start{
   position: absolute;
   top: 0;
@@ -598,10 +564,10 @@ export default {
   left: -50px;
 }
 .donghua2-enter-active{
-  transition: 900ms all ease;
+  transition: 1500ms all ease;
 }
 .donghua2-leave-active{
-  transition: 900ms all ease;
+  transition: 1500ms all ease;
 }
 .donghua2-enter-active{
   opacity: 1;
@@ -614,15 +580,6 @@ export default {
 }
 .donghua2-enter{
   opacity: 0;
-}
-.swiper-image{
-  width: 369px;
-  height: 271px;
-  position: absolute;
-}
-.tubiao{
-  margin-left: 77px;
-  margin-top: 60px;
 }
 .yuan{
   width: 7px;

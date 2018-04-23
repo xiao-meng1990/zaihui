@@ -13,7 +13,7 @@ export default {
 <style>
 #app {
   min-width: 1024px;
-  max-width: 2000px;
+  max-width: 2600px;
   font-weight: 300;
   letter-spacing: 3px;
 }

@@ -19,11 +19,28 @@
         <h3>再惠：客常谊久, 厚惠有期</h3>
         <div>传达了“优惠”和“再会”的双重含义：<br>每次都能享受优惠，感受到商户的诚意。亲密如友，每一次的分别，都是为了下一次更好的相会。</div>
       </zh-jumbotron>
-      <zh-jumbotron class="margin-t-130 story" zhTitle="使命 & 愿景" >
-        <h3>让开店成为一种享受</h3>
-        <div>通过互联网技术，让每笔交易做到心中有数，让每个会员对你不弃不离。<br>
-            每一笔支付都是生活的温度，每一次交易都连接着友谊。<br>
-            再惠为所有勤奋、敬业、匠心至诚的餐饮创业者点赞和赋能,每一位认真创业的老板，都值得我们认真对待。</div>
+      <zh-jumbotron class="margin-t-130 story swiper" zhTitle="使命 & 愿景" >
+        <transition name="donghua">
+        <span v-show="show[0]">
+          <h3>让开店成为一种享受</h3>
+          <div>通过互联网技术，让每笔交易做到心中有数，让每个会员对你不弃不离。<br>
+              每一笔支付都是生活的温度，每一次交易都连接着友谊。<br>
+              再惠为所有勤奋、敬业、匠心至诚的餐饮创业者点赞和赋能,每一位认真创业的老板，都值得我们认真对待。</div>
+        </span>
+        </transition>
+        <transition name="donghua">
+        <span v-show="show[1]">
+          <h3>成为吃喝玩乐的第一信息入口</h3>
+          <div>从前，用户在茫茫信息中主动搜索所需；<br>
+              如今，通过大数据分析用户画像，精准推送合适的信息。<br>
+              从前，消费者努力思考今天吃什么玩什么；<br>
+              如今，量身定制的推送信息，让选择变得简单且合乎心意。</div>
+        </span>
+        </transition>
+        <p>
+          <span @click="clickSwiper(0)" :class="{bgcolor:show[0]}"></span>
+          <span @click="clickSwiper(1)" :class="{bgcolor:show[1]}"></span>
+        </p>
       </zh-jumbotron>
       <zh-jumbotron class="margin-t-130 story" zhTitle="发展历程" >
         <div class="time-line-box">
@@ -75,36 +92,18 @@
           </div>
         </div>
       </zh-jumbotron>
-      <zh-jumbotron class="margin-t-220" zhTitle="精英团队" >
-        <div style="margin:10px 0 71px;">通过互联网技术，让每笔交易做到心中有数，让每个会员对你不弃不离。<br>
-            每一笔支付都是生活的温度，每一次交易都连接着友谊。<br>
-            再惠为所有勤奋、敬业、匠心至诚的餐饮创业者点赞和赋能,每一位认真创业的老板，都值得我们认真对待。</div>
+      <zh-jumbotron class="margin-t-220" zhTitle="努力工作，纵情生活" >
         <div class="boss-list">
           <div class="boss">
             <div class="boss-img1"></div>
-            <h3>赵洋</h3>
-            <p>联合创始人</p>
-            <div class="boss-text">毕业于加州大学伯克利分校计算机系，<br>
-                                  曾在美国最大的客户成功SaaS公司<br>
-                                  Totango负责核心产品线，<br>
-                                  曾在LinkedIn负责企业服务用户体验设计。</div>
           </div><div class="boss">
             <div class="boss-img2"></div>
-            <h3>朱辰昊</h3>
-            <p>联合创始人</p>
-            <div class="boss-text">毕业于斯坦福大学法学院，<br>
-                曾在美国最大律师事务所之一的<br>
-                K&L Gates从业4年，<br>
-                从事过近百个创业公司的融资和并购。</div>
           </div><div class="boss">
             <div class="boss-img3"></div>
-            <h3>李晓捷</h3>
-            <p>联合创始人</p>
-            <div class="boss-text">曾是大众点评资深销售负责人，<br>
-                负责团购、广告、预定、会员卡等<br>
-                各业务线的销售工作。</div>
           </div>
         </div>
+        <div style="margin-top:47px;">在再惠，我们不仅努力做好产品和业务，更拼命去体验和生活，带着每一位同事多去看世界，不敢有些许怠<br>
+        慢，一起跨越壮阔中国，一起走过世界尽头。不负袍泽不负己，不负客户不负卿。</div>
       </zh-jumbotron>
     </zh-detail>
     <zh-footer class="foot-box2"></zh-footer>
@@ -124,6 +123,41 @@ export default {
     zhDetail,
     zhFooter,
     zhJumbotron,
+  },
+  data(){
+    return {
+      show:[true,false],
+      i:1
+    }
+  },
+  mounted:function(){
+    this.textSwiper();
+  },
+  methods:{
+    textSwiper: function(){
+      setInterval(() => {
+        var j=(this.i)%2;
+        for(var n=0;n<this.show.length;n++){
+          if(n==j){
+            this.$set(this.show, n, true);
+          }else{
+            this.$set(this.show, n, false);
+          }
+        }
+        this.i++;
+      }, 3000)
+    },
+    clickSwiper: function(ind){
+      this.i = ind;
+      var j=(this.i)%2;
+      for(var n=0;n<this.show.length;n++){
+        if(n==j){
+          this.$set(this.show, n, true);
+        }else{
+          this.$set(this.show, n, false);
+        }
+      }
+    }
   }
 }
 </script>
@@ -141,12 +175,13 @@ export default {
   margin-top: 220px;
 }
 .boss-list{
-  width: 795px;
+  width: 910px;
   margin: 0 auto;
   font-size: 0;
+  margin-top: 70px;
 }
 .boss-list>div{
-  width: 260px;
+  width: 300px;
   display: inline-block;
   text-align: center;
   font-size: 0;
@@ -156,26 +191,32 @@ export default {
 .boss-list>.boss>.boss-img1{
   margin: 0 auto;
   width: 115px;
-  height: 117px;
+  height: 115px;
+  border-radius: 50%;
+  border: 2px solid #58afff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("../assets/images/boss1.png")
+  background-image: url("../assets/images/jingying1.png")
 }
 .boss-list>.boss>.boss-img2{
   margin: 0 auto;
   width: 115px;
-  height: 117px;
+  height: 115px;
+  border-radius: 50%;
+  border: 2px solid #58afff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("../assets/images/boss1.png")
+  background-image: url("../assets/images/jingying2.png")
 }
 .boss-list>.boss>.boss-img3{
   margin: 0 auto;
   width: 115px;
-  height: 117px;
+  height: 115px;
+  border-radius: 50%;
+  border: 2px solid #58afff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("../assets/images/boss1.png")
+  background-image: url("../assets/images/jingying3.png")
 }
 .boss>h3{
   color: #58AFFF;
@@ -200,7 +241,12 @@ export default {
   letter-spacing: 2px;
   text-align: left;
   margin-top: 25px;
-  
+}
+.story{
+  position: relative;
+}
+.swiper{
+  height: 223px;
 }
 .story>h3{
   margin: 0 auto;
@@ -212,6 +258,33 @@ export default {
   text-align: center;
   margin-top: 16px;
 }
+.story>span>h3{
+  margin: 0 auto;
+  width: 800px;
+  color: #58AFFF;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 6px;
+}
+.story>span{
+  display: block;
+  height: 140px;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+}
+.story>span>div{
+  color: #4f4f4f;
+  font-size: 14px;
+  width: 760px;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 15px;
+  line-height: 1.8;
+}
 .story>div{
   color: #4f4f4f;
   font-size: 14px;
@@ -221,6 +294,24 @@ export default {
   text-align: center;
   margin-top: 15px;
   line-height: 1.8;
+}
+.story>p{
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
+  bottom: 0;
+}
+.story>p>span{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+  background-color: #E0E0E0;
+  margin: 0 8px;
+
 }
 .time-line-box{
   position: relative;
@@ -320,5 +411,26 @@ export default {
 }
 .m-top10{
   top: 693px;
+}
+.bgcolor{
+  background-color: #58AFFF!important;
+}
+.donghua-enter-active{
+  transition: 500ms all ease;
+}
+.donghua-leave-active{
+  transition: 500ms all ease;
+}
+.donghua-enter-active{
+  opacity: 1;
+}
+.donghua-leave-active{
+  opacity: 0;
+}
+.donghua-leave{
+  opacity: 0;
+}
+.donghua-enter{
+  opacity: 0;
 }
 </style>

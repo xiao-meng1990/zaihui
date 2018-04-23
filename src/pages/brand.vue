@@ -11,7 +11,7 @@
       msgBottom2="通过创意内容，帮助商户获得精准流量，"
       msgBottom3="高效转化新客，实现商业价值，提升品牌影响力。"
     ></zh-header-product>
-    <zh-detail style="margin-bottom:70px;">
+    <zh-detail style="margin-bottom:80px;">
       <div class="bg11"></div>
       <div class="bg12"></div>
       <div class="bg13"></div>
@@ -24,10 +24,10 @@
         </ul>
         <div class="tab-content">
           <div role="tabpanel" :class="{active:showstyle1[0]}" class="tab-pane zh-tabs" id="navfirst1">
-            <div>松子看似只是一颗小小的微不足道的种子，却包含了无穷的能量</div>
-            <div>松子不仅是再惠的吉祥物松鼠惠惠最喜欢的食物，也是各位商户的精神食粮</div>
-            <div>松子创意希望能为商户播下种子，通过专业的品牌视觉定制服务</div>
-            <div>让品牌茁壮成长，收获辛苦耕耘的果实</div>
+            <div class="set-font">松子看似只是一颗小小的微不足道的种子，却包含了无穷的能量</div>
+            <div class="set-font">松子不仅是再惠的吉祥物松鼠惠惠最喜欢的食物，也是各位商户的精神食粮</div>
+            <div class="set-font">松子创意希望能为商户播下种子，通过专业的品牌视觉定制服务</div>
+            <div class="set-font">让品牌茁壮成长，收获辛苦耕耘的果实</div>
           </div>
           <div role="tabpanel" :class="{active:showstyle1[1]}" class="tab-pane zh-tabs" id="navfirst2">
             <div>团队成员曾服务于正邦、饿了么、阿里云、天猫、豆捞坊等知名企业，</div>
@@ -54,13 +54,16 @@
             </div>
           </div>
           <div role="tabpanel" :class="{active:showstyle1[3]}" class="tab-pane zh-tabs" id="navfirst4">
-            <div class="second-img1">
-              <div></div>
-              <p>高端品牌视觉定制套餐</p>
-            </div>
-            <div class="second-img2">
+           
+            <div @mouseover="showList" @mouseout="hideList" class="second-img2">
               <div></div>
               <p>个性化视觉定制</p>
+              <ul v-show="list" class="list-style">
+                <li>企业LOGO设计</li>
+                <li>菜单设计</li>
+                <li>高级物料设计制作</li>
+                <li>海报设计制作</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -126,13 +129,6 @@
         </ul>
         <div class="tab-content">
           <div :class="{active:showstyle3[0]}" class="tab-pane zh-tabs" id="navthird1">
-            <span style="border-right: 1px solid #B9B9B9;">惠生活</span>
-            <span style="border-right: 1px solid #B9B9B9;">礼品卡</span>
-            <span>公众号推文</span>
-            <span style="border-right: 1px solid #B9B9B9;padding: 0px 54px;">朋广设计推广</span>
-            <span>H5</span>
-          </div>
-          <div :class="{active:showstyle3[1]}" class="tab-pane zh-tabs" id="navthird2">
             <div class="fourth-img1">
               <div></div>
               <p>专注服务餐饮商户<br>
@@ -151,6 +147,14 @@
                 既可获取新会员<br>
                 又能提升老会员消费频次</p>
             </div>
+          </div>
+          <div :class="{active:showstyle3[1]}" class="tab-pane zh-tabs" id="navthird2">
+            
+            <span style="border-right: 1px solid #B9B9B9;">惠生活</span>
+            <span style="border-right: 1px solid #B9B9B9;">礼品卡</span>
+            <span>公众号推文</span>
+            <span style="border-right: 1px solid #B9B9B9;padding: 0px 54px;">朋广设计推广</span>
+            <span>H5</span>
           </div>
         </div>
       </markup>
@@ -239,6 +243,7 @@ export default {
   data(){
     return {
       activeName: 'first',
+      list:false,
       showstyle1:[true,false,false,false],
       showstyle2:[true,false,false,false],
       showstyle3:[true,false],
@@ -320,6 +325,12 @@ export default {
           }
         }
     },
+    showList(){
+      this.list = true;
+    },
+    hideList(){
+      this.list = false;
+    }
   }
 }
 </script>
@@ -341,9 +352,10 @@ export default {
   margin-bottom: 10px;
 }
 .zh-tabs>div{
-  font-size: 14px;
+  font-size: 12px;
   color: #4f4f4f;
-  line-height: 1.5
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .zh-tabs>span{
   display: inline-block;
@@ -362,33 +374,39 @@ export default {
   width: 64px;
   height: 51px;
   background-image: url("../assets/images/first1.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 64px 48px;
   display: inline-block;
 }
 .first-img1>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .first-img2{
   width: 140px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 80px;
+  margin: 0 75px;
 }
 .first-img2>div{
   width: 64px;
   height: 51px;
   background-image: url("../assets/images/first2.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 44px 51px;
   display: inline-block;
 }
 .first-img2>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .first-img3{
   width: 150px;
@@ -399,14 +417,15 @@ export default {
   width: 64px;
   height: 51px;
   background-image: url("../assets/images/first3.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 54px 48px;
   display: inline-block;
 }
 .first-img3>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
 }
 .second-img1{
   width: 220px;
@@ -418,7 +437,8 @@ export default {
   width: 87px;
   height: 87px;
   background-image: url("../assets/images/second1.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 48px 74px;
   display: inline-block;
@@ -431,13 +451,15 @@ export default {
   width: 220px;
   vertical-align: top;
   display: inline-block;
-  margin-left: 85px;
+  position: relative;
+  cursor: pointer;
 }
 .second-img2>div{
   width: 87px;
   height: 87px;
   background-image: url("../assets/images/second2.png");
-  background-position: center center;
+  background-position: center 16px;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 87px 87px;
   display: inline-block;
@@ -450,59 +472,68 @@ export default {
   width: 140px;
   vertical-align: top;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .third-img1>div{
   width: 63px;
   height: 55px;
   background-image: url("../assets/images/third1.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 63px 42px;
   display: inline-block;
 }
 .third-img1>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .third-img2{
   width: 140px;
   vertical-align: top;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .third-img2>div{
   width: 63px;
   height: 55px;
   background-image: url("../assets/images/third2.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 50px 54px;
   display: inline-block;
 }
 .third-img2>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .third-img3{
   width: 140px;
   vertical-align: top;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .third-img3>div{
   width: 63px;
   height: 55px;
   background-image: url("../assets/images/third3.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 29px 55px;
   display: inline-block;
 }
 .third-img3>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .third-img4{
   width: 140px;
@@ -513,17 +544,20 @@ export default {
   width: 63px;
   height: 55px;
   background-image: url("../assets/images/third4.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 58px 43px;
   display: inline-block;
 }
 .third-img4>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .fourth-img1{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
 }
@@ -531,38 +565,44 @@ export default {
   width: 64px;
   height: 59px;
   background-image: url("../assets/images/fourth1.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 63px 42px;
   display: inline-block;
 }
 .fourth-img1>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .fourth-img2{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 72px;
+  margin: 0 42px;
 }
 .fourth-img2>div{
   width: 64px;
   height: 59px;
   background-image: url("../assets/images/fourth2.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 52px 50px;
   display: inline-block;
 }
 .fourth-img2>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .fourth-img3{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
 }
@@ -570,18 +610,21 @@ export default {
   width: 64px;
   height: 59px;
   background-image: url("../assets/images/fourth3.png");
-  background-position: center center;
+  background-position: center bottom;
+  margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 39px 59px;
   display: inline-block;
 }
 .fourth-img3>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .fifth-img1{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
 }
@@ -589,14 +632,16 @@ export default {
   width: 59px;
   height: 46px;
   background-image: url("../assets/images/fifth1.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 53px 46px;
   display: inline-block;
 }
 .fifth-img1>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .fifth-img1>span{
   color: #4f4f4f;
@@ -604,26 +649,30 @@ export default {
   font-weight: normal;
   display: block;
   margin-top: 20px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .fifth-img2{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 72px;
+  margin: 0 42px;
 }
 .fifth-img2>div{
   width: 59px;
   height: 46px;
   background-image: url("../assets/images/fifth2.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 59px 42px;
   display: inline-block;
 }
 .fifth-img2>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .fifth-img2>span{
   color: #4f4f4f;
@@ -631,6 +680,8 @@ export default {
   font-weight: normal;
   display: block;
   margin-top: 20px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .fifth-img3{
   width: 150px;
@@ -641,14 +692,16 @@ export default {
   width: 59px;
   height: 46px;
   background-image: url("../assets/images/fifth3.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 44px 43px;
   display: inline-block;
 }
 .fifth-img3>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .fifth-img3>span{
   color: #4f4f4f;
@@ -656,25 +709,29 @@ export default {
   font-weight: normal;
   display: block;
   margin-top: 20px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 
 .sixth-img1{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
 }
 .sixth-img1>div{
   width: 59px;
-  height: 46px;
+  height: 47px;
   background-image: url("../assets/images/sixth1.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 50px 49px;
   display: inline-block;
 }
 .sixth-img1>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .sixth-img1>span{
   color: #4f4f4f;
@@ -685,23 +742,23 @@ export default {
 }
 
 .sixth-img2{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 72px;
+  margin: 0 42px;
 }
 .sixth-img2>div{
   width: 59px;
-  height: 46px;
+  height: 47px;
   background-image: url("../assets/images/sixth2.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 50px 44px;
   display: inline-block;
 }
 .sixth-img2>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
 }
 .sixth-img2>span{
   color: #4f4f4f;
@@ -712,22 +769,22 @@ export default {
 }
 
 .sixth-img3{
-  width: 150px;
+  width: 175px;
   display: inline-block;
   vertical-align: top;
 }
 .sixth-img3>div{
   width: 59px;
-  height: 46px;
+  height: 47px;
   background-image: url("../assets/images/sixth3.png");
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 43px 43px;
   display: inline-block;
 }
 .sixth-img3>p{
   color: #4f4f4f;
-  font-size: 10px;
+  font-size: 12px;
 }
 .sixth-img3>span{
   color: #4f4f4f;
@@ -735,6 +792,11 @@ export default {
   font-weight: normal;
   display: block;
   margin-top: 20px;
+}
+.set-font{
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 .bg11{
   position: absolute;
@@ -768,5 +830,17 @@ export default {
   z-index: -1;
   right: 0;
   bottom:162px;
+}
+.list-style{
+  position: absolute;
+  right: -119px;
+  top: 0;
+  box-shadow: 3px 3px 5px #DBDBDB;
+  border-radius: 4px;
+  padding: 11px 6px;
+  text-align: left;
+}
+.list-style>li:hover{
+  color: #76B6E4;
 }
 </style>

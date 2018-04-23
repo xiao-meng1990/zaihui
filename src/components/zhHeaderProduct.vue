@@ -1,6 +1,6 @@
 <template> 
   <div :class="headerTop">
-    <div>
+    <div style="position: relative;z-index: 10;">
       <router-link to="/">
         <div class="logo"></div>
       </router-link>
@@ -95,7 +95,10 @@ export default {
 }
 .headerTop7{
   height: 400px;
-  background: linear-gradient(to left, #74c3ff, #3e50ff);
+  background-image: url('../assets/images/bg/bg20.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
 }
 
 .headText{
@@ -120,6 +123,8 @@ export default {
   font-size: 14px;
   color: #ffffff;
   font-weight: 100;
-  margin-bottom: 0
+  margin-bottom: 0;
+  line-height: 25px;
+  letter-spacing: 1.5px;
 }
 </style>

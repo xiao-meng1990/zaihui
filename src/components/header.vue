@@ -30,7 +30,15 @@ export default {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.headerTop{
-  height: 600px;
+@media screen and (max-width: 1199px) {
+  .headerTop{
+    height: 600px;
+  }
 }
+@media screen and (min-width: 1200px) {
+  .headerTop{
+    height: 6rem;
+  }
+}
+
 </style>

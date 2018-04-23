@@ -95,8 +95,8 @@ export default {
   margin-bottom: 81px;
 }
 .top{
-  width: 826px;
-  height: 100px;
+  width: 850px;
+  height: 80px;
   margin: 0 auto;
 }
 .top>.text-left{
@@ -131,7 +131,7 @@ p:before{
 .center{
   width: 681px;
   height: 398px;
-  background-image: url(/static/img/pad.0c56644.png);
+  background-image: url("../assets/images/pad.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 575px 394px;
@@ -142,15 +142,15 @@ p:before{
   position: relative;
   width: 456px;
   height: 338px;
-  top: 32px;
-  left: 112px;
+  top: 34px;
+  left: 116px;
 }
 .center>.swiper-img img{
-  width: 456px;
-  height: 338px;
+  width: 450px;
+  height: 331px;
 }
 .bottom{
-  width: 826px;
+  width: 850px;
   height: 100px;
   margin: 0 auto;
 }

@@ -19,7 +19,7 @@ export default {
       type:Array,
       default: function(){
         return [{
-          row:"通过科学的咨询、专业的设计和品牌管理方法2222222"
+          row:"通过科学的咨询、专业的设计和品牌管理方法"
         },{
           row:"帮助商户搭建品牌体系，塑造良好的品牌形象，从而降低运营成本"
         },{
@@ -52,5 +52,8 @@ export default {
 }
 .row{
   text-align: center;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1.5px;
 }
 </style>

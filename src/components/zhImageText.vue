@@ -45,10 +45,10 @@ export default {
 <style scoped>
 .imageText{
   display: inline-block;
-  width: 190px;
+  width: 210px;
   height: 150px;
   vertical-align: top;
-  margin: 44px 20px;
+  margin: 44px 10px;
 }
 .imageText p{
   font-weight: 400;

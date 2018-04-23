@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>再惠</title>
-    
+    <script>
+      (function() {
+        window.onresize = function() {
+          var winW = (document.documentElement.clientWidth || document.body.clientWidth);
+          document.documentElement.style.fontSize = winW / 12 + "px";
+        };
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        document.documentElement.style.fontSize = winW / 12 + "px";
+      })(window)
+    </script>
     <style>
     .xuanfu{
       position: fixed;
@@ -30,6 +39,11 @@
       -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
       box-shadow: 0 0px -1px rgba(0, 0, 0, 0.175);
       background-clip: padding-box;
+    }
+    ul,li{
+      padding: 0;
+      margin: 0;
+      list-style-type:none;
     }
 </style>
   </head>
